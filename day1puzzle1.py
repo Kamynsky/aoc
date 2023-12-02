@@ -1,7 +1,4 @@
 #!~/usr/bin/python3
-import urllib.request
-
-url='https://adventofcode.com/2023/day/1/input'
-requestfile=urllib.request.urlopen(url)
-for line in requestfile:
-    print(line)
+with open('day1puzzle1.txt','r') as file:
+    for line in file: 
+        print(line)
