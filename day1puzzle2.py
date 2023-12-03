@@ -5,9 +5,9 @@ sum=0 # Initialize Sum which is needed for answer
 pattern_two_digits=r'\D*(\d).*?(\d)\D*$' # Regex Pattern for Two digit search
 pattern_one_digit=r'\D*(\d).*' # Regex pattern for single digit search
 input_file='day1puzzle1.txt'
-word_to_digit={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9} # dictionary used for searching and replacing word to digit
+word_to_digit={'one':1,'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9} # dictionary used for searching and replacing word to digit
 with open(input_file,'r') as file: #open file containing strings 
-    for line in file: # go line by line 
+    for line in file: # go line by line
         match = re.search(pattern_two_digits, line) # search for first and last digit
         if match: 
             found_digits=match.group(1) + match.group(2) # If two digits are found combine them in to two digit number . 7 and 7 becomes 77
