@@ -1,4 +1,5 @@
-# Puzzle is to find first and last digit in the input file , if there is only one digit it is used twice as first and last digit
+# Puzzle 1 is to find first and last digit in the input file , if there is only one digit it is used twice as first and last digit
+# Puzzle 2 is to find and replaced english words for number with digits and use previous code to provide sum . Meaning two in string becomes 2 etc.
 import re #Import Regex Lib to search for Digits
 sum=0 # Initialize Sum which is needed for answer 
 pattern_two_digits=r'\D*(\d).*?(\d)\D*$' # Regex Pattern for Two digit search
