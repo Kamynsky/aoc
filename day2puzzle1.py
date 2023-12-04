@@ -11,7 +11,6 @@ pattern_game_id=r"(\d+):"
 pattern_cube_red_and_value=r".(\d+).red."
 pattern_cube_green_and_value=r'.(\d+).green.'
 pattern_cube_blue_and_value=r'.(\d+).blue.'
-
 with open('day2puzzle.txt','r') as input:
     for line in input:
         state=False
