@@ -1,0 +1,1 @@
+# find numbers that are next to special char on the same line and +1 -1 index on the line over or below it
