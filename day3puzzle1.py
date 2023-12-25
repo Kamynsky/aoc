@@ -17,7 +17,7 @@ def input_file_request():
     if os.path.exists(input_file):
         print('File already exists, no need to download it again')
     else:
-        coockie_file='c:/acoecoockie.txt'
+        coockie_file='acoecoockie.txt'
         with open(coockie_file,'r') as file:
             coockie=file.read().strip()
             url="http://adventofcode.com/2023/day/"+day+"/input"
@@ -32,7 +32,8 @@ response = input_file_request()
 #Code for puzzle
 #--------------------------------------------------------------------------------------------------------------------------
 grid=[]
-number=
+digit_list=[]
+characters_list=[]
 with open(input_file,'r') as file:      # import file content as grid
     for line in file:
         grid.append(line.strip())
@@ -42,8 +43,16 @@ column_size=len(grid[0]) # grid column lenght
 
 for i, row in enumerate(grid):
     for j, item in enumerate(row):
-        if item.isdigit() and item !='.':
-            print(f"Char '{item}'found at index column'{i}', row'{j}'")
+        if item.isdigit():
+            digit_list.append([item,i,j])
+        elif item !='.':
+            characters_list.append([item,i,j])
+
+for digit,column,row in digit_list:
+    
+
+            
+            
             
 # def symbol_checker(char):
 #     return (not char.isdigit()) and char != '.'
