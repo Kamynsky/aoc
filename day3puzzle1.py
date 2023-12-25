@@ -4,11 +4,14 @@
 #or mayben we can go line by line and just look form indexes and compare them to next line?
 import urllib.request
 import os
-day=str(3)
+file_with_path = os.path.abspath(__file__)
+file_name = os.path.basename(file_with_path)
+day=file_name[3]
+print(day)
 input_file='inputday'+day+'.txt'
 def input_file_request():
     if os.path.exists(input_file):
-        print('File already exists')
+        print('File already exists, no need to download it again')
     else:
         coockie_file='c:/acoecoockie.txt'
         with open(coockie_file,'r') as file:
