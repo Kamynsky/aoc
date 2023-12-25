@@ -8,7 +8,7 @@ file_with_path = os.path.abspath(__file__)
 file_name = os.path.basename(file_with_path)
 day=file_name[3]
 print(day)
-input_file='inputday'+day+'.txt'
+input_file='day'+day+'input.txt'
 def input_file_request():
     if os.path.exists(input_file):
         print('File already exists, no need to download it again')
