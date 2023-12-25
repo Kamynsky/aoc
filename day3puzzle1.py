@@ -2,17 +2,18 @@
 # use index of numbers and special chars and comepere them to find adjecant ones , use try as a method to trying ?
 # we need to read 3 lines so we can compare middle to upper and below , this will ofc not work with first and last line 
 #or mayben we can go line by line and just look form indexes and compare them to next line?
-import re
-input_file='day3puzzle.txt'
-speccharpattern=r'[^a-zA-Z0-9]'
-with open(input_file,'r') as file:
-    for line in file:
-        special_chars=line.replace('.','').rstrip()
-        special_chars=re.findall(speccharpattern,special_chars)
-        print(special_chars)
-#         for i, char in enumerate(line):
-#             if char.isdigit():
-#                 index_iterate = i
-#                 print(index_iterate)
-#             elif char==
-        
+import urllib.request
+day=str(3)
+def input_file_request():
+    coockie_file='c:/acoecoockie.txt'
+    with open(coockie_file,'r') as file:
+        coockie=file.read().strip()
+        url="http://adventofcode.com/2023/day/"+day+"/input"
+        request = urllib.request.Request(url)
+        request.add_header('Cookie', coockie)
+        response = urllib.request.urlopen(request)
+        return response
+response = input_file_request()
+input=response.read().decode('utf-8')
+print(input)
+            
