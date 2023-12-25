@@ -32,10 +32,22 @@ response = input_file_request()
 #Code for puzzle
 #--------------------------------------------------------------------------------------------------------------------------
 grid=[]
+number=
 with open(input_file,'r') as file:      # import file content as grid
     for line in file:
         grid.append(line.strip())
 
-row=len(grid) # grid row lenght
-column=len(grid[0]) # grid column lenght
+row_size=len(grid) # grid row lenght
+column_size=len(grid[0]) # grid column lenght
 
+for i, row in enumerate(grid):
+    for j, item in enumerate(row):
+        if item.isdigit() and item !='.':
+            print(f"Char '{item}'found at index column'{i}', row'{j}'")
+            
+# def symbol_checker(char):
+#     return (not char.isdigit()) and char != '.'
+
+# def digit_index_checker(index):    
+
+# def symbol_presence_checker(index_start,index_end):
