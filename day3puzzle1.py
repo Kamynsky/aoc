@@ -31,7 +31,11 @@ response = input_file_request()
 #--------------------------------------------------------------------------------------------------------------------------
 #Code for puzzle
 #--------------------------------------------------------------------------------------------------------------------------
+grid=[]
 with open(input_file,'r') as file:      # import file content as grid
-    for line in file.readlines():
+    for line in file:
         grid.append(line.strip())
+
+row=len(grid) # grid row lenght
+column=len(grid[0]) # grid column lenght
 
