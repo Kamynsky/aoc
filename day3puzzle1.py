@@ -31,24 +31,60 @@ response = input_file_request()
 #--------------------------------------------------------------------------------------------------------------------------
 #Code for puzzle
 #--------------------------------------------------------------------------------------------------------------------------
-grid=[]
-digit_list=[]
-characters_list=[]
-with open(input_file,'r') as file:      # import file content as grid
+grid = []
+digit_list = []
+characters_list = []
+numbers_list = []
+
+with open(input_file, 'r') as file:  # import file content as grid
     for line in file:
         grid.append(line.strip())
 
-row_size=len(grid) # grid row lenght
-column_size=len(grid[0]) # grid column lenght
+row_size = len(grid)  # grid row length
+column_size = len(grid[0])  # grid column length
 
 for i, row in enumerate(grid):
     for j, item in enumerate(row):
         if item.isdigit():
-            digit_list.append([item,i,j])
-        elif item !='.':
-            characters_list.append([item,i,j])
+            digit_list.append([item, i, j])
+        elif item != '.':
+            characters_list.append([item, i, j])
 
-for digit,column,row in digit_list:
+current_number = ""
+start_index = None
+
+for i in range(len(digit_list) - 1):
+    digit, row, column = digit_list[i]
+    next_digit, next_row, next_column = digit_list[i + 1]
+
+    current_number += digit
+    if start_index is None:
+        start_index = column
+
+    if next_column != column + 1 or next_digit != str(int(digit) + 1):
+        end_index = column
+        numbers_list.append([int(current_number), row, start_index, end_index])
+        current_number = ""
+        start_index = None
+
+# Handle the last digit separately
+digit, row, column = digit_list[-1]
+current_number += digit
+end_index = column
+numbers_list.append([int(current_number), row, start_index, end_index])
+
+# Print the result
+for result_tuple in numbers_list:
+    print(result_tuple)
+
+
+    
+    
+# for digit,row,column in digit_list:
+#     if row < row_size:
+#         if column < column_size:
+            
+    
     
 
             
