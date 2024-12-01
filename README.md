@@ -1,1 +1,1 @@
-This Repo will be used to do Advent Of Code https://adventofcode.com/  puzzles 
+2024 Adveent Of Code https://adventofcode.com/ attempt
