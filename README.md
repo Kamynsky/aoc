@@ -1,1 +1,1 @@
-2024 Adveent Of Code https://adventofcode.com/ attempt
+2024 Advent Of Code https://adventofcode.com/ attempt
