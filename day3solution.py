@@ -2,9 +2,17 @@
 # multiplay xxx and yyy
 # sum multiplication
 import re
+sollution=0
 with open('day3input.txt','r') as f:
     input = " ".join(line.rstrip() for line in f)
-    mullist=re.findall("mul\([0-9]+,[0-9]+\)",input)
-    for item in mullist:
+    lookingfor=re.compile(r"mul\(([0-9]+),([0-9]+)\)")
+    for match in lookingfor.finditer(input):
+        x=int(match.group(1))
+        y=int(match.group(2))
+        multiplication=x*y
+        sollution+=multiplication
+        print(sollution)
+ 
+
         
     
